@@ -341,8 +341,10 @@ script = ExtResource("1_ffcxg")
 hand_container = NodePath("Body/Dave_handinghand/HandContainer")
 
 [node name="DaveDialogMousePressPanel" type="Panel" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = -342.0
+offset_top = -137.0
+offset_right = 1578.0
+offset_bottom = 943.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o23mx")
 script = ExtResource("3_smsmo")
 
@@ -421,8 +423,9 @@ texture = ExtResource("4_yfpeb")
 centered = false
 
 [node name="Dave_body1" type="Sprite2D" parent="Body"]
-position = Vector2(-55.428394, 227.26378)
-scale = Vector2(1, 1.003144)
+position = Vector2(-47.74331, 220.04668)
+rotation = 0.023329077
+scale = Vector2(1, 1.0112666)
 texture = ExtResource("5_kf3nt")
 centered = false
 
@@ -439,10 +442,9 @@ visible = false
 centered = false
 
 [node name="Dave_head" type="Sprite2D" parent="Body"]
-position = Vector2(13.7292185, 117.94198)
-rotation = 0.0068594976
-scale = Vector2(1, 1.003144)
-skew = -0.0027439562
+position = Vector2(30.258377, 108.02003)
+rotation = 0.06268692
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("6_nj2p7")
 centered = false
 
@@ -451,131 +453,131 @@ visible = false
 centered = false
 
 [node name="Dave_beard" type="Sprite2D" parent="Body"]
-position = Vector2(79.90041, 215.02798)
-rotation = 0.0068594976
-scale = Vector2(1, 1.003144)
-skew = -0.0027439562
+position = Vector2(90.4117, 209.52002)
+rotation = 0.06268692
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("7_mbnm1")
 centered = false
 
 [node name="Dave_mouths" type="Sprite2D" parent="Body"]
-position = Vector2(111.50041, 226.86378)
-rotation = 0.0068594976
-scale = Vector2(1, 1.003144)
-skew = -0.0027439562
+position = Vector2(121.09336, 223.17502)
+rotation = 0.06268692
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("8_7kxro")
 centered = false
 
 [node name="Dave_eye" type="Sprite2D" parent="Body"]
-position = Vector2(143.27202, 177.14238)
-rotation = 6.246412
-scale = Vector2(1, 1.003144)
+position = Vector2(155.7667, 175.04837)
+rotation = 6.302239
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("9_usqct")
 centered = false
 
 [node name="Dave_eyebrow" type="Sprite2D" parent="Body"]
-position = Vector2(145.25061, 163.33498)
-rotation = 6.246412
-scale = Vector2(1, 1.003144)
+position = Vector2(158.68504, 159.15005)
+rotation = 6.302239
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("10_gw4o1")
 centered = false
 
 [node name="Dave_pot" type="Sprite2D" parent="Body"]
-position = Vector2(6.136627, 106.79917)
-rotation = 6.249155
-scale = Vector2(1.0322139, 1.003144)
+position = Vector2(25.468388, 92.32002)
+rotation = 6.3206496
+scale = Vector2(1.032, 1.0102667)
 texture = ExtResource("11_5uciu")
 centered = false
 
 [node name="Dave_innerarm" type="Sprite2D" parent="Body"]
-position = Vector2(219.8214, 425.07162)
-rotation = -0.0027439562
-scale = Vector2(1, 1.003144)
+position = Vector2(224.20833, 422.44003)
+rotation = 0.07184897
+scale = Vector2(0.999, 1.0102667)
 texture = ExtResource("12_kxyio")
 centered = false
 
 [node name="Dave_innerhand" type="Sprite2D" parent="Body"]
-position = Vector2(180.4428, 448.0432)
-rotation = -0.0054871263
-scale = Vector2(0.924, 0.927144)
+position = Vector2(180.88998, 444.9784)
+rotation = 0.029466795
+scale = Vector2(0.923, 0.93326664)
 texture = ExtResource("13_1mi2n")
 centered = false
 
 [node name="Dave_innerfinger1" type="Sprite2D" parent="Body"]
-position = Vector2(155.41399, 451.51563)
-rotation = -0.06447629
-scale = Vector2(0.92321396, 0.92635804)
+position = Vector2(156.45332, 446.19177)
+rotation = -0.0026773808
+scale = Vector2(0.921, 0.9312666)
 texture = ExtResource("14_5x3gs")
 centered = false
 
 [node name="Dave_innerfinger2" type="Sprite2D" parent="Body"]
-position = Vector2(170.3, 470.6362)
-rotation = -0.012346624
-scale = Vector2(0.924, 0.92635804)
+position = Vector2(171.18999, 464.7901)
+rotation = 0.124585725
+scale = Vector2(0.922, 0.93226665)
 texture = ExtResource("15_pkxbp")
 centered = false
 
 [node name="Dave_innerfinger3" type="Sprite2D" parent="Body"]
-position = Vector2(186.0214, 483.31482)
-rotation = -0.019206122
-scale = Vector2(0.924, 0.92635804)
+position = Vector2(183.51834, 480.12506)
+rotation = 0.06777551
+scale = Vector2(0.922, 0.93144995)
 texture = ExtResource("16_cm68l")
 centered = false
 
 [node name="Dave_innerfinger4" type="Sprite2D" parent="Body"]
-position = Vector2(205.2498, 495.25803)
-rotation = -0.06722025
-scale = Vector2(0.92321396, 0.92635804)
-skew = 0.0027435631
+position = Vector2(203.29167, 494.6684)
+rotation = -0.080344126
+scale = Vector2(0.922, 0.93226665)
+skew = 0.0034907633
 texture = ExtResource("17_56ysj")
 centered = false
 
 [node name="Dave_outerarm" type="Sprite2D" parent="Body"]
-position = Vector2(1.0930043, 443.1568)
-rotation = 0.013718209
-scale = Vector2(1, 1.003144)
+position = Vector2(3.5100107, 440.32666)
+rotation = -0.020594899
+scale = Vector2(1, 1.0102667)
 texture = ExtResource("18_2flxe")
 centered = false
 
 [node name="Dave_outerhand" type="Sprite2D" parent="Body"]
-position = Vector2(76.03622, 398.4358)
-rotation = 0.020577706
-scale = Vector2(1.087, 1.090144)
+position = Vector2(80.066696, 392.8117)
+rotation = 0.057480074
+scale = Vector2(1.086, 1.0982666)
+skew = -0.00459604
 texture = ExtResource("19_qdppa")
 centered = false
 
 [node name="Dave_outerfinger1" type="Sprite2D" parent="Body"]
-position = Vector2(82.11564, 371.9074)
-rotation = 0.07270737
-scale = Vector2(1.086214, 1.090144)
+position = Vector2(76.64173, 370.165)
+rotation = -0.2066457
+scale = Vector2(1.0858166, 1.0972667)
 texture = ExtResource("20_2t86a")
 centered = false
 
 [node name="Dave_outerfinger2" type="Sprite2D" parent="Body"]
-position = Vector2(101.72922, 396.1074)
-rotation = 0.034295917
-scale = Vector2(1.087, 1.090144)
+position = Vector2(106.01338, 391.05838)
+rotation = 0.07929733
+scale = Vector2(1.085, 1.0962666)
 texture = ExtResource("21_c22xj")
 centered = false
 
 [node name="Dave_outerfinger3" type="Sprite2D" parent="Body"]
-position = Vector2(109.45762, 411.9218)
-rotation = 0.034295917
-scale = Vector2(1.087, 1.090144)
-skew = -0.0027434847
+position = Vector2(112.34004, 409.2217)
+rotation = 0.014109407
+scale = Vector2(1.085, 1.0962666)
+skew = -0.003810284
 texture = ExtResource("22_3xq2r")
 centered = false
 
 [node name="Dave_outerfinger4" type="Sprite2D" parent="Body"]
-position = Vector2(120.08601, 432.9576)
-rotation = 0.031552747
-scale = Vector2(1.087, 1.090144)
+position = Vector2(123.23836, 428.35004)
+rotation = 0.03851525
+scale = Vector2(1.085, 1.0970833)
+skew = -0.0038109291
 texture = ExtResource("23_ffcxg")
 centered = false
 
 [node name="Dave_handinghand" type="Sprite2D" parent="Body"]
 visible = false
-position = Vector2(85.16461, 433.693)
+position = Vector2(88.14499, 426.74002)
 texture = ExtResource("41_mnqem")
 centered = false
 

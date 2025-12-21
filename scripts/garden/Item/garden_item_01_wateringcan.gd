@@ -6,11 +6,6 @@ class_name WateringCan
 var curr_plant_cells:Array[PlantCellGarden]
 
 
-func _process(_delta):
-	if is_activate:
-		global_position = get_global_mouse_position()
-
-
 ## 判断当前是否有植物格子
 func judge_is_curr_plant_cell() -> bool:
 	return curr_plant_cells != []

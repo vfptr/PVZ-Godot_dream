@@ -160,6 +160,7 @@ func get_first_be_hit_plant_in_cell(plant:Plant000Base)->Plant000Base:
 ## 被保护伞弹开,更新移动贝塞尔曲线
 func be_umbrella_bounce():
 	if not is_bounce:
+		z_index = 4000
 		is_bounce = true
 		## 被弹开之后,删除子弹碰撞器
 		area_2d_attack.queue_free()

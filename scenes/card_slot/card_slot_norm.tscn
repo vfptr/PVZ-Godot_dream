@@ -83,6 +83,10 @@ text = "999990"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Marker2DSunTarget" type="Marker2D" parent="CardSlotBattle/SunLabelControl"]
+unique_name_in_owner = true
+position = Vector2(-39, 26)
+
 [node name="CardUiList" type="HBoxContainer" parent="CardSlotBattle"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2

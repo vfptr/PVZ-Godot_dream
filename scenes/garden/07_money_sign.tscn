@@ -9,7 +9,6 @@
 [sub_resource type="Resource" id="Resource_v0ynm"]
 script = ExtResource("2_iopsr")
 text = "我给你$1500换你这棵植物！"
-is_crazy = false
 is_hand = true
 is_choosed = true
 metadata/_custom_type_script = "uid://7qucqjvdq78q"
@@ -17,11 +16,6 @@ metadata/_custom_type_script = "uid://7qucqjvdq78q"
 [sub_resource type="Resource" id="Resource_oclsb"]
 script = ExtResource("3_dgja6")
 dialog_detail_list = Array[ExtResource("2_iopsr")]([SubResource("Resource_v0ynm")])
-dialog_detail_long_time_idle_list = Array[ExtResource("2_iopsr")]([])
-is_enter_up = false
-is_grab = false
-is_long_time_dave = false
-hand_show_item_path = ""
 metadata/_custom_type_script = "uid://dlfnh7fjqyil6"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iopsr"]

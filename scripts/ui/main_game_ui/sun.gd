@@ -18,8 +18,8 @@ func _ready() -> void:
 	if not collected and is_instance_valid(self):
 		_start_fade_out()
 
-func init_sun(sun_value:int, pos:Vector2):
-	self.sun_value = sun_value
+func init_sun(curr_sun_value:int, pos:Vector2):
+	sun_value = curr_sun_value
 	position = pos
 
 func _sun_scale(new_sun_value:int):
@@ -38,7 +38,13 @@ func _on_button_pressed() -> void:
 	var target_position = Vector2()
 	SoundManager.play_other_SFX("points")
 	if is_instance_valid(Global.main_game):
-		target_position = Global.main_game.marker_2d_sun_target.global_position
+		if is_instance_valid(Global.main_game.marker_2d_sun_target):
+			## 出战卡槽在canvaslayer中，位置和摄像头位置有偏移
+			target_position = Global.main_game.marker_2d_sun_target.global_position + Global.main_game.camera_2d.global_position
+			#print(Global.main_game.marker_2d_sun_target.get_canvas_layer_node().get_final_transform())
+		else:
+			target_position = Global.main_game.marker_2d_sun_target_default.global_position
+
 		EventBus.push_event("add_sun_value", [sun_value])
 
 	var tween:Tween = get_tree().create_tween()

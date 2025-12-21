@@ -55,8 +55,8 @@ enum E_Influence_Speed_Factor{
 	HammerZombieSpeed,	## 锤僵尸模式修改速度
 	ZamboniHp,		## 冰车僵尸血量变化时
 	Butter,			## 黄油
-
 	EatGarlic,		## 啃食大蒜后短时间停止
+	OutBattlefield,	## 宽屏战场外僵尸移动加速
 }
 ## 是否被魅惑
 var is_hypno:bool = false

@@ -45,7 +45,7 @@ var is_end_wave := false
 ## 被魅惑僵尸列表
 var all_zombies_be_hypno:Array[Zombie000Base] = []
 ## 僵尸可以存在的x坐标范围,超出该范围,每波刷新时删除,最后一波时每秒删除检查删除
-var zombie_range_pos_x:=Vector2(-300, 900)
+var zombie_range_pos_x:=Vector2(-300, 1000)
 ## 所有僵尸列表,用于每波清除在地图外的僵尸(矿工,魅惑等僵尸)
 var all_zombies_1d:Array[Zombie000Base]
 

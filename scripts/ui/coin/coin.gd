@@ -38,7 +38,6 @@ func _ready():
 		button.mouse_entered.connect(Global.main_game.mouse_appear_have_hammer)
 		button.mouse_exited.connect(Global.main_game.mouse_disappear_have_hammer)
 
-	## process_always=false: 暂停时计时器也暂停
 	await get_tree().create_timer(coin_exist_time, false).timeout
 	fade_and_delete()
 
@@ -129,4 +128,3 @@ func be_attract_gold_magnet(target_global_pos:Vector2):
 
 	await be_attract_tween.finished
 	queue_free()
-

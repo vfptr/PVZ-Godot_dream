@@ -11,7 +11,8 @@ var curr_cards:Array[Card]
 func _unhandled_key_input(event):
 	## 铲子快捷键
 	if Input.is_action_just_pressed("ShortcutKeys_Shovel"):
-		ui_shovel._on_button_pressed()
+		if ui_shovel.visible:
+			ui_shovel._on_button_pressed()
 		return
 	## 卡片快捷键
 	for i in range(1,11):
@@ -23,3 +24,4 @@ func _unhandled_key_input(event):
 				curr_cards[card_i]._on_button_pressed()
 			else:
 				return
+

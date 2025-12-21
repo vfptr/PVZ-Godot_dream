@@ -133,7 +133,7 @@ enum E_ZInitAttr{
 	CurrWave,			## 僵尸波次
 	IsMiniZombie,		## 是否为小僵尸大麻烦的小僵尸
 	IsPotZombie,		## 是否为罐子生成的僵尸，小丑瞬爆
-	IsZombieMode,		## 是否为我是僵尸模式的僵尸，气球落地
+	IsZombieMode,		## 是否为我是僵尸模式的僵尸，气球落地,撑杆食脑
 }
 
 ## 修改初始化状态，在添加到场景树之前调用
@@ -156,7 +156,7 @@ func _ready() -> void:
 	if is_mini_zombie:
 		update_mini_zombie()
 	super()
-	##TODO: 检测是否有头节点,后续删除
+	##INFO: 检测是否有头节点
 	var is_have_head:=false
 	for head1_path:NodePath in head1_path_candidate:
 		if has_node(head1_path):
@@ -191,26 +191,61 @@ func ready_norm():
 	## 两栖类僵尸在水路时变化
 	if Global.get_zombie_info(zombie_type, Global.ZombieInfoAttribute.ZombieRowType) == Global.ZombieRowType.Both:
 		if body_change_on_pool != null:
-			## 水路时body变化
-			if curr_zombie_row_type == Global.ZombieRowType.Pool:
-				for sprite_path in body_change_on_pool.sprite_appear:
-					var sprite = get_node(sprite_path)
-					sprite.visible = true
+			zombie_row_type_both_body_update()
 
-				for sprite_path in body_change_on_pool.sprite_disappear:
-					var sprite = get_node(sprite_path)
-					sprite.visible = false
-			else:
+	## 舞王僵尸会报错，当前帧最后调用
+	call_deferred("judge_battlefield_update_speed")
 
-				for sprite_path in body_change_on_pool.sprite_appear:
-					var sprite = get_node(sprite_path)
-					sprite.visible = false
+## 两栖类僵尸body变化
+func zombie_row_type_both_body_update():
+	## 水路时body变化
+	if curr_zombie_row_type == Global.ZombieRowType.Pool:
+		for sprite_path in body_change_on_pool.sprite_appear:
+			var sprite = get_node(sprite_path)
+			sprite.visible = true
 
-				for sprite_path in body_change_on_pool.sprite_disappear:
-					var sprite = get_node(sprite_path)
-					sprite.visible = true
+		for sprite_path in body_change_on_pool.sprite_disappear:
+			var sprite = get_node(sprite_path)
+			sprite.visible = false
+	else:
 
+		for sprite_path in body_change_on_pool.sprite_appear:
+			var sprite = get_node(sprite_path)
+			sprite.visible = false
 
+		for sprite_path in body_change_on_pool.sprite_disappear:
+			var sprite = get_node(sprite_path)
+			sprite.visible = true
+
+#region 宽屏下僵尸是否在战场外
+## 判断是否在战场的计时器，每0.3秒判断一次
+var judge_battlefield_timer:Timer
+## 进入战场信号
+signal signal_enter_battlefield
+
+## 僵尸判断宽屏战场外移动加速
+func judge_battlefield_update_speed():
+	if global_position.x >= 800:
+		## 初始化角色速度
+		update_speed_factor(2, E_Influence_Speed_Factor.OutBattlefield)
+		judge_battlefield_timer = Timer.new()
+		judge_battlefield_timer.name = "judge_battlefield_timer"
+		judge_battlefield_timer.wait_time = 0.3
+		judge_battlefield_timer.one_shot = false
+		judge_battlefield_timer.timeout.connect(_on_judge_battlefield_timer_timeout)
+		add_child(judge_battlefield_timer)
+		judge_battlefield_timer.start()
+		## 等待进入战场
+		await signal_enter_battlefield
+		update_speed_factor(1, E_Influence_Speed_Factor.OutBattlefield)
+
+func _on_judge_battlefield_timer_timeout():
+	#print("判断一次是否进入战场")
+	if global_position.x < 800:
+		signal_enter_battlefield.emit()
+		judge_battlefield_timer.queue_free()
+
+#endregion
 
 ## 初始化正常出战角色信号连接
 func ready_norm_signal_connect():
@@ -448,10 +483,18 @@ func loss_iron_item():
 func be_blow_away():
 	pass
 
+
+## 僵尸从墓碑出现
+func zombie_up_from_tombstone(anim_multiply:float):
+	update_speed_factor(0.0, Character000Base.E_Influence_Speed_Factor.HammerZombieSpeed)
+	await zombie_up_from_ground(1/anim_multiply)
+	## 从地下出来后恢复动画
+	update_speed_factor(anim_multiply, Character000Base.E_Influence_Speed_Factor.HammerZombieSpeed)
+
 ## 从地下出来
-func zombie_up_from_ground():
+func zombie_up_from_ground(up_time:float = 1.0):
 	is_body_up_from_ground = true
-	await body.zombie_body_up_from_ground()
+	await body.zombie_body_up_from_ground(up_time)
 	is_body_up_from_ground = false
 
 ## 跳跃被高坚果停止

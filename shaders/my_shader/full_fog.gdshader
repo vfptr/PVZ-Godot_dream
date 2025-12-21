@@ -15,7 +15,7 @@ uniform float color_variation = 0.3;
 uniform float edge_perturb = 0.05;
 
 // 方形遮罩参数
-const int MAX_RECTS = 8;
+const int MAX_RECTS = 16;
 uniform vec2 rect_centers[MAX_RECTS];
 uniform vec2 rect_sizes[MAX_RECTS];
 uniform float rect_rotations[MAX_RECTS];

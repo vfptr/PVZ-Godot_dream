@@ -13,6 +13,8 @@ config_version=5
 config/name="GodotPVZ-Dream_me"
 run/main_scene="uid://dc1xvxus2co66"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+config/icon="uid://nvs04a01o2tr"
+config/windows_native_icon="res://pvz_icon.ico"
 
 [autoload]
 
@@ -26,7 +28,7 @@ MainGameDate="*res://scripts/autoload/main_game_date.gd"
 
 [display]
 
-window/size/viewport_width=800
+window/size/viewport_width=1066
 window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 
@@ -125,3 +127,4 @@ test1={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

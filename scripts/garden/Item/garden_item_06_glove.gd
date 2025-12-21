@@ -3,7 +3,6 @@ class_name GardenGlove
 
 var is_have_plant := false
 @onready var plant_cell_garden: PlantCellGarden = $PlantCellGarden
-@onready var body: Node2D = $Body
 var choosed_plant_data := {}
 ## 当前手套目标植物格子
 var target_plant_cell:PlantCellGarden
@@ -16,6 +15,12 @@ func _input(event):
 	if is_activate :
 		## 如果是 点击鼠标左键
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			## 安卓端等待两帧移动到对应的位置
+			is_mouse_button_pressed_wait = true
+			global_position = get_global_mouse_position()
+			body.visible = false
+			await get_tree().physics_frame
+			await get_tree().physics_frame
 			## 当前手套有植物格子，但还未选择植物
 			if curr_plant_cell and curr_plant_cell.plant_in_cell and not is_have_plant:
 				use_it()
@@ -24,6 +29,7 @@ func _input(event):
 				lay_plant()
 			else:
 				deactivate_it()
+			is_mouse_button_pressed_wait = false
 		## 如果是鼠标右键
 		elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 			deactivate_it()

@@ -83,7 +83,7 @@ shadow_size = 3
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6ai2"]
-size = Vector2(900, 600)
+size = Vector2(1111, 600)
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_7dde3")
@@ -303,15 +303,17 @@ unique_name_in_owner = true
 process_mode = 1
 layout_mode = 3
 anchors_preset = 0
+offset_left = 150.0
+offset_right = 150.0
 script = ExtResource("35_ee3wa")
 
 [node name="Marker2DSunTargetDefault" type="Marker2D" parent="CanvasLayerCardSlot/CardSlotRoot"]
 unique_name_in_owner = true
-position = Vector2(40, 35)
+position = Vector2(42, 39)
 
 [node name="CardSlotContainer" type="PanelContainer" parent="CanvasLayerCardSlot/CardSlotRoot"]
 unique_name_in_owner = true
-layout_mode = 1
+layout_mode = 0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_41ccn")
 
@@ -383,19 +385,15 @@ unique_name_in_owner = true
 [node name="CanvasLayerCardSlotFront" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 10
+follow_viewport_enabled = true
 
 [node name="CanvasLayerTemp" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 20
 follow_viewport_enabled = true
 
-[node name="TemporaryPlants" type="Node2D" parent="CanvasLayerTemp"]
+[node name="TemporaryCharacter" type="Node2D" parent="CanvasLayerTemp"]
 unique_name_in_owner = true
-z_index = 1000
-
-[node name="TemporaryZombies" type="Node2D" parent="CanvasLayerTemp"]
-unique_name_in_owner = true
-z_index = 1000
 
 [node name="RealShovel" type="Sprite2D" parent="CanvasLayerTemp"]
 unique_name_in_owner = true
@@ -436,7 +434,6 @@ layer = 50
 
 [node name="CoinBankLabel" parent="CanvasLayerUI" instance=ExtResource("30_xh73d")]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -449,9 +446,11 @@ grow_vertical = 0
 [node name="UIRemindWord" type="Control" parent="CanvasLayerUI"]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 0
-offset_right = 800.0
-offset_bottom = 600.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
@@ -561,11 +560,17 @@ texture = ExtResource("23_vyo3a")
 
 [node name="LevelInfo" type="Control" parent="CanvasLayerUI"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 616.0
-offset_top = 572.0
-offset_right = 656.0
-offset_bottom = 596.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = -30.0
+offset_right = -185.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
 mouse_filter = 2
 script = ExtResource("46_y1sge")
 
@@ -598,7 +603,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("25_aop5g")
-metadata/_edit_use_anchors_ = true
 
 [node name="MainGameMenuButton" type="BaseButton" parent="CanvasLayerUI/All_UI"]
 _import_path = NodePath("")
@@ -628,17 +632,17 @@ use_parent_material = false
 clip_contents = false
 custom_minimum_size = Vector2(0, 0)
 layout_direction = 0
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 1.0
 anchor_bottom = 0.0
-offset_left = 694.0
+offset_left = -104.0
 offset_top = 0.0
-offset_right = 798.0
+offset_right = 0.0
 offset_bottom = 38.0
-grow_horizontal = 1
+grow_horizontal = 0
 grow_vertical = 1
 rotation = 0.0
 scale = Vector2(1, 1)
@@ -707,10 +711,17 @@ vertical_alignment = 1
 [node name="MainGameMenuOptionDialog" type="TextureRect" parent="CanvasLayerUI/All_UI"]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(412, 483)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -241.5
+offset_right = 206.0
+offset_bottom = 241.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("27_w5iw5")
@@ -719,11 +730,18 @@ stretch_mode = 3
 script = ExtResource("28_mddbc")
 
 [node name="Option" type="Control" parent="CanvasLayerUI/All_UI/MainGameMenuOptionDialog"]
-anchors_preset = 0
-offset_left = 300.0
-offset_top = 173.0
-offset_right = 518.0
-offset_bottom = 431.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -129.0
+offset_right = 109.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayerUI/All_UI/MainGameMenuOptionDialog/Option"]
@@ -1240,10 +1258,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -175.0
-offset_top = -161.0
-offset_right = 185.0
-offset_bottom = -61.0
+offset_left = -180.0
+offset_top = -100.0
+offset_right = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
@@ -1272,10 +1289,17 @@ text = "返回游戏"
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-offset_left = 242.0
-offset_top = 162.0
-offset_right = 242.0
-offset_bottom = 162.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -158.0
+offset_right = -160.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayerUI/All_UI/Dialog"]
 layout_mode = 0
@@ -1287,10 +1311,13 @@ text = "没做"
 
 [node name="LabelZombieSum" type="Label" parent="CanvasLayerUI"]
 unique_name_in_owner = true
-offset_left = 27.7894
-offset_top = 575.477
-offset_right = 215.789
-offset_bottom = 601.477
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -26.0
+offset_right = 213.0
+grow_vertical = 0
 theme = ExtResource("25_aop5g")
 theme_type_variation = &"Label3"
 text = "当前僵尸数量：0"
@@ -1321,6 +1348,7 @@ z_index = 4002
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-150, 0)
 anchor_mode = 0
 script = ExtResource("24_b4qea")
 
@@ -1334,7 +1362,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectComponentGlobal/Area2D"]
-position = Vector2(420, 300)
+position = Vector2(525.5, 300)
 shape = SubResource("RectangleShape2D_b6ai2")
 debug_color = Color(0, 0.6, 0.69803923, 0.20392157)
 

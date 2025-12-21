@@ -841,7 +841,7 @@ position = Vector2(851, 133)
 script = ExtResource("4_6sinj")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row1" index="0"]
-position = Vector2(0, 30)
+position = Vector2(100, 30)
 
 [node name="Zombies_row2" type="Node2D" parent="ZombiesRoot" index="1"]
 z_index = 20
@@ -849,7 +849,7 @@ position = Vector2(851, 213)
 script = ExtResource("4_6sinj")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row2" index="0"]
-position = Vector2(0, 31)
+position = Vector2(100, 31)
 
 [node name="Zombies_row3" type="Node2D" parent="ZombiesRoot" index="2"]
 z_index = 30
@@ -857,7 +857,7 @@ position = Vector2(851, 309)
 script = ExtResource("4_6sinj")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row3" index="0"]
-position = Vector2(0, 23)
+position = Vector2(100, 23)
 
 [node name="Zombies_row4" type="Node2D" parent="ZombiesRoot" index="3"]
 z_index = 40
@@ -865,7 +865,7 @@ position = Vector2(851, 397)
 script = ExtResource("4_6sinj")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row4" index="0"]
-position = Vector2(0, 16)
+position = Vector2(100, 16)
 
 [node name="Zombies_row5" type="Node2D" parent="ZombiesRoot" index="4"]
 z_index = 50
@@ -873,4 +873,4 @@ position = Vector2(851, 485)
 script = ExtResource("4_6sinj")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row5" index="0"]
-position = Vector2(0, 15)
+position = Vector2(100, 15)

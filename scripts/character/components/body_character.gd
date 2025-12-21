@@ -97,7 +97,7 @@ func imitater_update_material():
 
 #region 僵尸从地下\水下出现
 ## 僵尸从地下出来
-func zombie_body_up_from_ground():
+func zombie_body_up_from_ground(up_time:float = 1.0):
 	body_mask_start()
 	## 泥土特效
 	var dirt_rise_effect:DirtRiseEffect = SceneRegistry.DIRT_RISE_EFFECT.instantiate()
@@ -106,7 +106,7 @@ func zombie_body_up_from_ground():
 
 	position.y += 100
 	var tween :Tween = create_tween()
-	tween.tween_property(self, "position:y", position.y-100, 1)
+	tween.tween_property(self, "position:y", position.y-100, up_time)
 	await tween.finished
 	body_mask_end()
 

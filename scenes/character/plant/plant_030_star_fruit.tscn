@@ -49,7 +49,7 @@ nodes/TimeScale/position = Vector2(360, 300)
 node_connections = [&"output", 0, &"TimeScale", &"OneShot", 0, &"Animation", &"OneShot", 1, &"TimeScale 2", &"TimeScale", 0, &"OneShot", &"TimeScale 2", 0, &"Animation 2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds8om"]
-size = Vector2(800, 5)
+size = Vector2(1200, 5)
 
 [node name="Plant030StarFruit" instance=ExtResource("1_nndnm")]
 script = ExtResource("2_ds8om")
@@ -70,8 +70,8 @@ visible = false
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
-position = Vector2(5.4722357, 8.00647)
-scale = Vector2(0.65855527, 0.73808354)
+position = Vector2(3.0973063, 9.702693)
+scale = Vector2(0.7060628, 0.7059461)
 texture = ExtResource("2_j1qv8")
 centered = false
 
@@ -82,22 +82,23 @@ texture = ExtResource("3_ds8om")
 centered = false
 
 [node name="Starfruit_smile" type="Sprite2D" parent="Body/BodyCorrect" index="5"]
-position = Vector2(34.8, 34.821293)
-scale = Vector2(0.65855527, 0.73808354)
+position = Vector2(34.59551, 35.3)
+scale = Vector2(0.70621544, 0.70599097)
+skew = -0.00014103805
 texture = ExtResource("3_us3df")
 centered = false
 
 [node name="Starfruit_leaf" type="Sprite2D" parent="Body/BodyCorrect" index="6"]
-position = Vector2(29.942587, 1.657412)
-rotation = 0.2391575
-scale = Vector2(0.6613423, 0.73250943)
-skew = 0.041031424
+position = Vector2(26.70449, 5.197306)
+rotation = 0.00048579474
+scale = Vector2(0.706, 0.70623344)
+skew = -0.00025073224
 texture = ExtResource("4_ds8om")
 centered = false
 
 [node name="Starfruit_stem" type="Sprite2D" parent="Body/BodyCorrect" index="7"]
-position = Vector2(30.578707, 4.121294)
-scale = Vector2(0.6151106, 0.82476825)
+position = Vector2(29.3, 6.401796)
+scale = Vector2(0.7061257, 0.70605385)
 texture = ExtResource("5_uefxc")
 centered = false
 
@@ -110,8 +111,8 @@ centered = false
 
 [node name="Starfruit_eyes2" type="Sprite2D" parent="Body/BodyCorrect" index="9"]
 visible = false
-position = Vector2(29.537762, 25.242588)
-scale = Vector2(0.67527026, 0.7897412)
+position = Vector2(28.999132, 26)
+scale = Vector2(0.70604956, 0.714)
 texture = ExtResource("6_0ews2")
 centered = false
 
@@ -172,7 +173,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D" index="0"]
-position = Vector2(400, 0)
+position = Vector2(600, 0)
 shape = SubResource("RectangleShape2D_ds8om")
 
 [node name="Area2D2" type="Area2D" parent="AttackComponent/DetectComponent" index="1"]
@@ -182,7 +183,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D2" index="0"]
-position = Vector2(400, 0)
+position = Vector2(600, 0)
 shape = SubResource("RectangleShape2D_ds8om")
 
 [node name="Area2D3" type="Area2D" parent="AttackComponent/DetectComponent" index="2"]
@@ -192,7 +193,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D3" index="0"]
-position = Vector2(400, 0)
+position = Vector2(600, 0)
 shape = SubResource("RectangleShape2D_ds8om")
 
 [node name="Area2D4" type="Area2D" parent="AttackComponent/DetectComponent" index="3"]
@@ -202,7 +203,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D4" index="0"]
-position = Vector2(400, 0)
+position = Vector2(600, 0)
 shape = SubResource("RectangleShape2D_ds8om")
 
 [node name="Area2D5" type="Area2D" parent="AttackComponent/DetectComponent" index="4"]
@@ -212,7 +213,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D5" index="0"]
-position = Vector2(400, 0)
+position = Vector2(600, 0)
 shape = SubResource("RectangleShape2D_ds8om")
 
 [connection signal="timeout" from="AttackComponent/BulletAttackCdTimer" to="AttackComponent" method="_on_bullet_attack_cd_timer_timeout"]

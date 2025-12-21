@@ -80,7 +80,7 @@ func update_fog_dynamic():
 	for i in range(min(collision_shapes.size(), 8)):
 		var shape_node = collision_shapes[i]
 		var shape = shape_node.shape
-		var global_pos = shape_node.global_position
+		var global_pos = shape_node.global_position - Global.main_game.camera_2d.global_position
 		var local_pos = dynamic_fog.make_canvas_position_local(global_pos)
 		var uv = local_pos / dynamic_fog.size
 
@@ -92,7 +92,7 @@ func update_fog_dynamic():
 			rotations.append(shape_node.global_rotation)
 
 	# 填满剩余，避免数组长度不够
-	while centers.size() < 8:
+	while centers.size() < 16:
 		centers.append(Vector2(-10, -10))  # 放到UV外面无效
 		sizes.append(Vector2.ZERO)
 		rotations.append(0.0)

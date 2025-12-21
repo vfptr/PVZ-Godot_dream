@@ -48,8 +48,9 @@ class_name MainGameManager
 @onready var canvas_layer_temp: CanvasLayer = %CanvasLayerTemp
 @onready var canvas_layer_ui: CanvasLayer = %CanvasLayerUI
 
-## 阳光收集位置
-@onready var marker_2d_sun_target: Marker2D = %Marker2DSunTargetDefault
+## 阳光收集位置,出战卡槽时更新
+var marker_2d_sun_target: Marker2D
+@onready var marker_2d_sun_target_default: Marker2D = %Marker2DSunTargetDefault
 
 ## 将子弹\爆炸\阳光
 @onready var bullets: Node2D = %Bullets
@@ -210,6 +211,13 @@ func event_bus_subscribe():
 	EventBus.subscribe("card_slot_norm_start_game", choosed_card_start_game)
 	## 多轮游戏触发下一轮游戏
 	EventBus.subscribe("start_next_round_game", start_next_round_game)
+	## 更新阳光收集位置
+	EventBus.subscribe("update_marker_2d_sun_target", update_marker_2d_sun_target)
+
+
+## 更新阳光收集位置
+func update_marker_2d_sun_target(new_marker_2d_sun_target:Marker2D):
+	marker_2d_sun_target = new_marker_2d_sun_target
 
 #region 游戏关卡初始化
 ## 初始化管理器

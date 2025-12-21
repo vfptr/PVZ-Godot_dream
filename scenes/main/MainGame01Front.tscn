@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2soejmoqi7wd" path="res://scenes/main/MainGame00Base.tscn" id="1_aymxe"]
 [ext_resource type="PackedScene" uid="uid://brnfbv2sxv2qh" path="res://scenes/ui/plant_cell.tscn" id="2_awllt"]
-[ext_resource type="Resource" uid="uid://dikgv2u2n2e0i" path="res://level_game_para/罐子僵尸.tres" id="2_mevug"]
+[ext_resource type="Resource" uid="uid://n4ag8qfqegwh" path="res://resources/level_date_resource/mode_adventure/adventure_01_day_test.tres" id="2_mevug"]
 [ext_resource type="Script" uid="uid://bkeu6j2ek3su7" path="res://scripts/main_game_item/zombies_row.gd" id="4_mevug"]
 
 [node name="MainGame" instance=ExtResource("1_aymxe")]
@@ -1015,35 +1015,35 @@ z_index = 10
 script = ExtResource("4_mevug")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row1" index="0"]
-position = Vector2(837, 166)
+position = Vector2(950, 166)
 
 [node name="Zombies_row2" type="Node2D" parent="ZombiesRoot" index="1"]
 z_index = 10
 script = ExtResource("4_mevug")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row2" index="0"]
-position = Vector2(837, 267)
+position = Vector2(950, 267)
 
 [node name="Zombies_row3" type="Node2D" parent="ZombiesRoot" index="2"]
 z_index = 10
 script = ExtResource("4_mevug")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row3" index="0"]
-position = Vector2(837, 363)
+position = Vector2(950, 363)
 
 [node name="Zombies_row4" type="Node2D" parent="ZombiesRoot" index="3"]
 z_index = 10
 script = ExtResource("4_mevug")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row4" index="0"]
-position = Vector2(837, 454)
+position = Vector2(950, 454)
 
 [node name="Zombies_row5" type="Node2D" parent="ZombiesRoot" index="4"]
 z_index = 10
 script = ExtResource("4_mevug")
 
 [node name="ZombieCreatePosition" type="Marker2D" parent="ZombiesRoot/Zombies_row5" index="0"]
-position = Vector2(837, 554)
+position = Vector2(950, 554)
 
 [node name="DetectComponentGlobal" parent="." index="16"]
 visible = false

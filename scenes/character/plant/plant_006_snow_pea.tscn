@@ -77,7 +77,7 @@ nodes/TimeScale/position = Vector2(340, 160)
 node_connections = [&"output", 0, &"TimeScale", &"Add2", 0, &"Animation", &"Add2", 1, &"OneShot", &"OneShot", 0, &"Animation 2", &"OneShot", 1, &"TimeScale 2", &"TimeScale", 0, &"Add2", &"TimeScale 2", 0, &"Animation 3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_askx4"]
-size = Vector2(800, 5)
+size = Vector2(1000, 5)
 
 [node name="Plant006SnowPea" node_paths=PackedStringArray("node2d_detect_in_slope") instance=ExtResource("1_ntefj")]
 script = ExtResource("2_6otjv")
@@ -89,103 +89,103 @@ unique_name_in_owner = true
 position = Vector2(-43, -69)
 
 [node name="Backleaf" type="Sprite2D" parent="Body/BodyCorrect" index="0"]
-position = Vector2(27.683748, 53.565014)
-scale = Vector2(0.5669752, 0.5280496)
+position = Vector2(27.7, 53.391342)
+scale = Vector2(0.56328356, 0.53706264)
 texture = ExtResource("2_askx4")
 centered = false
 
 [node name="Backleaf_left_tip" type="Sprite2D" parent="Body/BodyCorrect" index="1"]
-position = Vector2(24.9, 54.232506)
-rotation = 0.018871408
-scale = Vector2(0.57646275, 0.53769976)
+position = Vector2(24.954329, 54.091343)
+rotation = 0.012712328
+scale = Vector2(0.5695672, 0.5433462)
 texture = ExtResource("3_6otjv")
 centered = false
 
 [node name="Backleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="2"]
-position = Vector2(47.332504, 53.432507)
-rotation = 0.009578013
-scale = Vector2(0.60373825, 0.53769976)
+position = Vector2(47.24567, 53.237015)
+rotation = 0.006830405
+scale = Vector2(0.5880478, 0.5433462)
 texture = ExtResource("4_a5mo6")
 centered = false
 
 [node name="Stalk_bottom" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
-position = Vector2(36.765015, 51.302483)
-rotation = 0.077798866
-scale = Vector2(0.5571625, 0.6273635)
-skew = -0.025525616
+position = Vector2(36.591343, 51.72597)
+rotation = 0.0516462
+scale = Vector2(0.5564567, 0.6040717)
+skew = -0.017000047
 texture = ExtResource("5_wtkom")
 centered = false
 
 [node name="Stalk_top" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
-position = Vector2(32.081264, 40.426178)
-rotation = 0.071712695
-scale = Vector2(0.557, 0.72251487)
-skew = -0.028166058
+position = Vector2(31.67403, 41.99522)
+rotation = 0.04735868
+scale = Vector2(0.5564567, 0.66816735)
+skew = -0.019542752
 texture = ExtResource("6_58ts4")
 centered = false
 
 [node name="Frontleaf" type="Sprite2D" parent="Body/BodyCorrect" index="5"]
-position = Vector2(22.583748, 54.832504)
-scale = Vector2(0.5634876, 0.54302484)
+position = Vector2(22.65433, 54.637016)
+scale = Vector2(0.5608269, 0.5472597)
 texture = ExtResource("7_5gv34")
 centered = false
 
 [node name="Frontleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="6"]
-position = Vector2(56.083744, 56.016254)
-rotation = -0.0548699
-scale = Vector2(0.6177134, 0.5516749)
+position = Vector2(56.1, 56)
+rotation = -0.036391895
+scale = Vector2(0.5972448, 0.5530866)
 texture = ExtResource("8_gq5lk")
 centered = false
 
 [node name="Frontleaf_tip_left" type="Sprite2D" parent="Body/BodyCorrect" index="7"]
-position = Vector2(19.5, 61.267494)
-rotation = 0.05227305
-scale = Vector2(0.58195037, 0.5516749)
+position = Vector2(19.5, 61.35433)
+rotation = 0.034645896
+scale = Vector2(0.5729373, 0.5530866)
 texture = ExtResource("9_a3ama")
 centered = false
 
 [node name="Anim_stem" type="Sprite2D" parent="Body/BodyCorrect" index="8"]
-position = Vector2(38.34876, 45.223698)
+position = Vector2(38.137016, 46.314922)
 centered = false
 
 [node name="stem_correct" type="Node2D" parent="Body/BodyCorrect/Anim_stem" index="0"]
 position = Vector2(-37.6, -48.7)
 
 [node name="SnowPea_crystals1" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="0"]
-position = Vector2(8.702481, 11.407444)
-rotation = 0.0075721643
-scale = Vector2(0.58760047, 0.55)
-skew = -0.0075721643
+position = Vector2(9.180297, 12.56925)
+rotation = -0.04236712
+scale = Vector2(0.5763075, 0.55)
+skew = 0.04236712
 texture = ExtResource("10_t2k0g")
 centered = false
 
 [node name="SnowPea_crystals2" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="1"]
-position = Vector2(9.934988, 14.272456)
-rotation = 0.0075721643
-scale = Vector2(0.58443797, 0.53269976)
-skew = -0.0075721643
+position = Vector2(10.271641, 15.260593)
+rotation = -0.04236712
+scale = Vector2(0.5743941, 0.53834623)
+skew = 0.04236712
 texture = ExtResource("11_ljobm")
 centered = false
 
 [node name="SnowPea_crystals3" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="2"]
-position = Vector2(7.7, 23.704962)
-rotation = -0.07343392
-scale = Vector2(0.55183744, 0.55)
-skew = 0.07343392
+position = Vector2(7.7, 24.551937)
+rotation = -0.097503774
+scale = Vector2(0.5530866, 0.55)
+skew = 0.097503774
 texture = ExtResource("12_bg0v7")
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="3"]
-position = Vector2(19.316252, 14.43995)
-scale = Vector2(0.555, 0.5485757)
+position = Vector2(19.3, 15.569249)
+scale = Vector2(0.555, 0.53250456)
 texture = ExtResource("13_j0iub")
 centered = false
 
 [node name="SnowPea_mouth" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="4"]
-position = Vector2(52.767494, 14.43995)
-rotation = 0.0701598
-scale = Vector2(0.5583499, 0.54606324)
-skew = -0.0701598
+position = Vector2(52.908657, 15.569249)
+rotation = 0.13213456
+scale = Vector2(0.56171644, 0.528418)
+skew = -0.13213456
 texture = ExtResource("14_ncfxd")
 centered = false
 
@@ -195,7 +195,7 @@ centered = false
 
 [node name="Anim_blink" type="Sprite2D" parent="Body/BodyCorrect/Anim_stem/stem_correct" index="6"]
 visible = false
-position = Vector2(37.857323, 20.990234)
+position = Vector2(37.7407, 21.809381)
 scale = Vector2(0.555, 0.555)
 texture = ExtResource("15_t08fn")
 centered = false
@@ -242,7 +242,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D" index="0"]
-position = Vector2(400, 0)
+position = Vector2(500, 0)
 shape = SubResource("RectangleShape2D_askx4")
 
 [connection signal="timeout" from="AttackComponent/BulletAttackCdTimer" to="AttackComponent" method="_on_bullet_attack_cd_timer_timeout"]

@@ -68,7 +68,7 @@ nodes/TimeScale/position = Vector2(580, 140)
 node_connections = [&"output", 0, &"TimeScale", &"Add2", 0, &"Animation", &"Add2", 1, &"OneShot", &"OneShot", 0, &"Animation 2", &"OneShot", 1, &"TimeScale 2", &"TimeScale", 0, &"Add2", &"TimeScale 2", 0, &"Animation 3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qj71"]
-size = Vector2(800, 5)
+size = Vector2(1000, 5)
 
 [node name="Plant041GatlingPea" node_paths=PackedStringArray("node2d_detect_in_slope") instance=ExtResource("1_p53rq")]
 script = ExtResource("2_xuoid")
@@ -79,62 +79,63 @@ node2d_detect_in_slope = [NodePath("HurtBoxComponent/HurtBoxDetection"), NodePat
 position = Vector2(-42, -70)
 
 [node name="Backleaf" type="Sprite2D" parent="Body/BodyCorrect" index="0"]
-position = Vector2(27.7, 53.050297)
-scale = Vector2(0.55701196, 0.5504731)
+position = Vector2(27.680008, 53.579967)
+scale = Vector2(0.5671995, 0.52760094)
 texture = ExtResource("2_y3oii")
 centered = false
 
 [node name="Backleaf_left_tip" type="Sprite2D" parent="Body/BodyCorrect" index="1"]
-position = Vector2(25, 53.9503)
-rotation = 0.0026336655
-scale = Vector2(0.5585209, 0.55248505)
+position = Vector2(24.9, 54.239986)
+rotation = 0.01919771
+scale = Vector2(0.5767993, 0.5374006)
 texture = ExtResource("3_b4oky")
 centered = false
 
 [node name="Backleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="2"]
-position = Vector2(47.200596, 52.9503)
-scale = Vector2(0.5630479, 0.55248505)
+position = Vector2(47.339985, 53.439983)
+rotation = 0.009773785
+scale = Vector2(0.6045982, 0.5374006)
 texture = ExtResource("4_mmqa3")
 centered = false
 
 [node name="Stalk_bottom" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
-position = Vector2(36.250896, 52.348503)
-rotation = 0.017557938
-scale = Vector2(0.555503, 0.56455684)
-skew = -0.0061454037
+position = Vector2(36.77997, 51.28005)
+rotation = 0.07923456
+scale = Vector2(0.5571999, 0.6285974)
+skew = -0.026178218
 texture = ExtResource("5_xuoid")
 centered = false
 
 [node name="Stalk_top" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
-position = Vector2(31.251495, 44.14312)
-rotation = 0.015801992
-scale = Vector2(0.555503, 0.5942334)
-skew = -0.007023125
+position = Vector2(32.09996, 40.340183)
+rotation = 0.072952576
+scale = Vector2(0.557, 0.7253939)
+skew = -0.028622853
 texture = ExtResource("6_k2f5v")
 centered = false
 
 [node name="Frontleaf" type="Sprite2D" parent="Body/BodyCorrect" index="5"]
-position = Vector2(22.7497, 54.5006)
-scale = Vector2(0.55701196, 0.55248505)
+position = Vector2(22.580008, 54.839985)
+scale = Vector2(0.56359977, 0.5428005)
 texture = ExtResource("7_uh7kt")
 centered = false
 
 [node name="Frontleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="6"]
-position = Vector2(56.1994, 56)
-rotation = -0.012290606
-scale = Vector2(0.56958675, 0.554497)
+position = Vector2(56.080006, 56.019993)
+rotation = -0.05584873
+scale = Vector2(0.61879766, 0.55160016)
 texture = ExtResource("8_3qj71")
 centered = false
 
 [node name="Frontleaf_tip_left" type="Sprite2D" parent="Body/BodyCorrect" index="7"]
-position = Vector2(19.3497, 61.4994)
-rotation = 0.011412383
-scale = Vector2(0.5610359, 0.554497)
+position = Vector2(19.5, 61.260014)
+rotation = 0.053056143
+scale = Vector2(0.582399, 0.55160016)
 texture = ExtResource("9_unqju")
 centered = false
 
 [node name="Anim_idle" type="Sprite2D" parent="Body/BodyCorrect" index="8"]
-position = Vector2(37.801197, 47.844913)
+position = Vector2(38.359974, 45.160133)
 centered = false
 
 [node name="HeadCorrect" type="Node2D" parent="Body/BodyCorrect/Anim_idle" index="0"]
@@ -150,52 +151,56 @@ centered = false
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="2"]
-position = Vector2(19.2503, 17.045511)
-scale = Vector2(0.555, 0.51106584)
+position = Vector2(19.319992, 14.380127)
+scale = Vector2(0.555, 0.54939824)
 texture = ExtResource("10_a1fok")
 centered = false
 
 [node name="GatlingPea_mouth" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="3"]
-position = Vector2(49.3, 14.594614)
-scale = Vector2(0.555, 0.51106584)
+position = Vector2(49.580006, 11.600119)
+rotation = 0.067027435
+scale = Vector2(0.55820036, 0.546998)
+skew = -0.067027435
 texture = ExtResource("11_58iss")
 centered = false
 
 [node name="GatlingPea_barrel3" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="4"]
-position = Vector2(58.249702, 19.597008)
-rotation = -0.017443055
-scale = Vector2(0.55, 0.55)
-skew = 0.017443055
+position = Vector2(58.3, 18.480125)
+rotation = 0.027928364
+scale = Vector2(0.5508001, 0.55)
+skew = -0.027928364
 texture = ExtResource("12_00qr6")
 centered = false
 
 [node name="GatlingPea_barrel4" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="5"]
-position = Vector2(56, 25.647308)
-rotation = -0.017443055
-scale = Vector2(0.55, 0.55)
-skew = 0.017443055
+position = Vector2(56, 24.480125)
+rotation = 0.027928364
+scale = Vector2(0.5508001, 0.55)
+skew = -0.027928364
 texture = ExtResource("12_00qr6")
 centered = false
 
 [node name="GatlingPea_barrel2" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="6"]
-position = Vector2(56.1, 13.7970085)
-rotation = -0.017443055
-scale = Vector2(0.55, 0.55)
-skew = 0.017443055
+position = Vector2(56.1, 12.600119)
+rotation = 0.027928364
+scale = Vector2(0.5508001, 0.55)
+skew = -0.027928364
 texture = ExtResource("12_00qr6")
 centered = false
 
 [node name="GatlingPea_barrel1" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="7"]
-position = Vector2(53.1, 19.897007)
-rotation = -0.017443055
-scale = Vector2(0.55, 0.55)
-skew = 0.017443055
+position = Vector2(53.1, 18.520111)
+rotation = 0.027928364
+scale = Vector2(0.5508001, 0.55)
+skew = -0.027928364
 texture = ExtResource("12_00qr6")
 centered = false
 
 [node name="GatlingPea_mouth_overlay" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="8"]
-position = Vector2(49.4, 14.494615)
-scale = Vector2(0.55100596, 0.51106584)
+position = Vector2(49.319992, 11.520111)
+rotation = 0.067027435
+scale = Vector2(0.55820036, 0.546998)
+skew = -0.067027435
 texture = ExtResource("13_asa4q")
 centered = false
 
@@ -213,16 +218,16 @@ texture = ExtResource("16_k2f5v")
 centered = false
 
 [node name="PeaShooter_eyebrow" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="11"]
-position = Vector2(34.900597, 19.14671)
+position = Vector2(35, 17.380087)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("15_v8kqk")
 centered = false
 
 [node name="GatlingPea_helmet" type="Sprite2D" parent="Body/BodyCorrect/Anim_idle/HeadCorrect" index="12"]
-position = Vector2(10.0503, 3.6479056)
-rotation = 0.06545522
-scale = Vector2(0.60149103, 0.573024)
-skew = 0.034896005
+position = Vector2(10.219992, 2.2600555)
+rotation = 0.06667186
+scale = Vector2(0.59640026, 0.58559936)
+skew = 0.030717617
 texture = ExtResource("16_epx1u")
 centered = false
 
@@ -273,7 +278,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D" index="0"]
-position = Vector2(400, 0)
+position = Vector2(500, 0)
 shape = SubResource("RectangleShape2D_3qj71")
 
 [connection signal="timeout" from="AttackComponent/BulletAttackCdTimer" to="AttackComponent" method="_on_bullet_attack_cd_timer_timeout"]

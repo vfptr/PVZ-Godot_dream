@@ -59,9 +59,10 @@ var curr_condition:int = 3
 ## 在当前格子中对应容器位置的节点初始全局位置,
 var plant_postion_node_ori_global_position:Dictionary =  {}
 
+@export_subgroup("特殊状态，特殊状态下无法种植")
 ## 是否可以种植普通植物
 @export var can_common_plant := true
-@export_subgroup("特殊状态，特殊状态下无法种植")
+#var is_can_common_plant
 enum E_SpecialStatePlant {
 	IsTombstone,	# 墓碑
 	IsCrater,		# 坑洞
@@ -80,11 +81,11 @@ var tombstone:TombStone
 ## 当前cell的坑洞
 var crater:DoomShroomCrater
 
+@export_subgroup("特殊状态，特殊状态下无法种植僵尸")
 ## 是否可以种植僵尸
 @export var can_common_zombie := true
-@export_subgroup("特殊状态，特殊状态下无法种植僵尸")
 enum E_SpecialStateZombie {
-	IsNoPlantBowling,		# 不能种植（保龄球红线模式不能种植）
+	IsNoPlantBowling,		## 不能种植（保龄球红线模式不能种植）
 }
 ## 当前特殊状态
 @export var curr_special_state_zombie:Dictionary[E_SpecialStateZombie, bool]

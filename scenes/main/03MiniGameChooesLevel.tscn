@@ -408,6 +408,13 @@ texture = ExtResource("14_bkyeq")
 
 [node name="Rain" parent="AllPage/GridContainer/ChooseLevelButton4/Panel/TextureRect" instance=ExtResource("15_rivfv")]
 layout_mode = 0
+offset_left = -16.361694
+offset_top = 38.235672
+offset_right = 186.97168
+offset_bottom = 193.23564
+
+[node name="rainParticles" parent="AllPage/GridContainer/ChooseLevelButton4/Panel/TextureRect/Rain" index="3"]
+position = Vector2(118.33334, 4.9999905)
 
 [node name="Card17" type="Control" parent="AllPage/GridContainer/ChooseLevelButton4/Panel/TextureRect"]
 custom_minimum_size = Vector2(50, 70)
@@ -748,5 +755,6 @@ vertical_alignment = 1
 [editable path="AllPage/GridContainer/ChooseLevelButton2"]
 [editable path="AllPage/GridContainer/ChooseLevelButton3"]
 [editable path="AllPage/GridContainer/ChooseLevelButton4"]
+[editable path="AllPage/GridContainer/ChooseLevelButton4/Panel/TextureRect/Rain"]
 [editable path="AllPage/GridContainer/ChooseLevelButton5"]
 [editable path="AllPage/GridContainer2/ChooseLevelButton"]

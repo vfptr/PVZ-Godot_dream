@@ -135,7 +135,7 @@ nodes/TimeScale/position = Vector2(380, 80)
 node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"StateMachine"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7yu1"]
-size = Vector2(800, 5)
+size = Vector2(1000, 5)
 
 [node name="Plant027Cactus" node_paths=PackedStringArray("node2d_detect_in_slope") instance=ExtResource("1_vwoux")]
 script = ExtResource("2_d8wji")
@@ -147,38 +147,37 @@ node2d_detect_in_slope = [NodePath("HurtBoxComponent/HurtBoxDetection"), NodePat
 position = Vector2(-37, -66)
 
 [node name="Cactus_flower" type="Sprite2D" parent="Body/BodyCorrect" index="0"]
-position = Vector2(9.305532, -0.4677463)
-scale = Vector2(0.83132255, 0.82386637)
-skew = -0.085657746
+position = Vector2(12.301921, -4.803842)
+scale = Vector2(0.7719136, 0.9036681)
 texture = ExtResource("2_4xp4t")
 centered = false
 
 [node name="Cactus_floer_top" type="Sprite2D" parent="Body/BodyCorrect" index="1"]
-position = Vector2(19.862213, -4.2110662)
-rotation = -0.0918826
-scale = Vector2(0.799, 0.8196775)
+position = Vector2(21.853363, -9.503842)
+rotation = 0.11818722
+scale = Vector2(0.8, 0.8399616)
 texture = ExtResource("3_d8wji")
 centered = false
 
 [node name="Cactus_floer_top2" type="Sprite2D" parent="Body/BodyCorrect" index="2"]
-position = Vector2(15.081107, 0.9078274)
-rotation = -0.0918826
-scale = Vector2(0.499, 0.5122443)
+position = Vector2(16.0524, -5.2552834)
+rotation = 0.11818722
+scale = Vector2(0.5, 0.5249808)
 texture = ExtResource("3_d8wji")
 centered = false
 
 [node name="Cactus_floer_top3" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
-position = Vector2(15.381106, -4.0921726)
-rotation = -0.0918826
-scale = Vector2(0.549, 0.56305534)
+position = Vector2(17.454323, -10.304803)
+rotation = 0.11818722
+scale = Vector2(0.55, 0.57747597)
 texture = ExtResource("3_d8wji")
 centered = false
 
 [node name="Cactus_arm2_2" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
-position = Vector2(52, 43.518894)
-rotation = 0.11032567
-scale = Vector2(0.80618894, 0.82067746)
-skew = -0.11032567
+position = Vector2(52, 43.251442)
+rotation = -0.07531724
+scale = Vector2(0.8030096, 0.8404664)
+skew = 0.07531724
 texture = ExtResource("4_x7yu1")
 centered = false
 
@@ -191,9 +190,9 @@ visible = false
 centered = false
 
 [node name="Cactus_arm2_1" type="Sprite2D" parent="Body/BodyCorrect" index="7"]
-position = Vector2(56.094467, 31.256681)
-rotation = 0.09155291
-scale = Vector2(0.799189, 0.8204886)
+position = Vector2(53.646637, 30.35144)
+rotation = -0.047291648
+scale = Vector2(0.8, 0.8404664)
 texture = ExtResource("5_j28og")
 centered = false
 
@@ -204,38 +203,38 @@ texture = ExtResource("7_d8wji")
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="9"]
-position = Vector2(9.5, 5.9944673)
-scale = Vector2(0.8, 0.82067746)
+position = Vector2(9.5, 4.5524015)
+scale = Vector2(0.8, 0.8404664)
 texture = ExtResource("7_v8tp1")
 centered = false
 
 [node name="Cactus_arm1_2" type="Sprite2D" parent="Body/BodyCorrect" index="10"]
-position = Vector2(2.6188934, 41.694466)
-rotation = -0.053582776
-scale = Vector2(0.80118895, 0.82067746)
-skew = 0.053582776
+position = Vector2(2.6504803, 38.14472)
+rotation = 0.07618136
+scale = Vector2(0.8030096, 0.8404664)
+skew = -0.07618136
 texture = ExtResource("8_dbqxx")
 centered = false
 
 [node name="Cactus_arm1_1" type="Sprite2D" parent="Body/BodyCorrect" index="11"]
-position = Vector2(-11.775574, 18.088934)
-rotation = -0.07169516
-scale = Vector2(0.8, 0.8204886)
+position = Vector2(-7.592315, 12.294236)
+rotation = 0.060406797
+scale = Vector2(0.8, 0.8404664)
 texture = ExtResource("9_culdb")
 centered = false
 
 [node name="Cactus_mouth" type="Sprite2D" parent="Body/BodyCorrect" index="12"]
-position = Vector2(48.5, 24.094467)
-rotation = 0.064054586
-scale = Vector2(0.802, 0.8330553)
-skew = -0.064054586
+position = Vector2(48.55048, 22.70096)
+rotation = -0.062185332
+scale = Vector2(0.8020096, 0.8404664)
+skew = 0.062185332
 texture = ExtResource("10_bu7x2")
 centered = false
 
 [node name="Cactus_lips" type="Sprite2D" parent="Body/BodyCorrect" index="13"]
-position = Vector2(51.137787, 18.932253)
-rotation = 0.064714156
-scale = Vector2(0.8, 0.8204886)
+position = Vector2(49.69808, 16.04856)
+rotation = -0.057779916
+scale = Vector2(0.8, 0.8404664)
 texture = ExtResource("11_yhhlx")
 centered = false
 
@@ -250,7 +249,7 @@ centered = false
 
 [node name="Cactus_blink2" type="Sprite2D" parent="Body/BodyCorrect" index="15"]
 visible = false
-position = Vector2(24, 16.795256)
+position = Vector2(24, 15.644914)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_sgy8y")
 centered = false
@@ -296,7 +295,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D" index="0"]
-position = Vector2(400, 0)
+position = Vector2(500, 0)
 shape = SubResource("RectangleShape2D_x7yu1")
 
 [connection signal="timeout" from="AttackComponent/BulletAttackCdTimer" to="AttackComponent" method="_on_bullet_attack_cd_timer_timeout"]

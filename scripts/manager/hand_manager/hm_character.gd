@@ -2,10 +2,8 @@ extends Node
 ## 手持管理器，角色（植物僵尸）
 class_name HM_Character
 
-## 植物临时挂载节点
-@onready var temporary_plants: Node2D = %TemporaryPlants
-## 僵尸临时挂载节点
-@onready var temporary_zombies: Node2D = %TemporaryZombies
+## 角色临时挂载节点
+@onready var temporary_character: Node2D = %TemporaryCharacter
 
 ## 当前卡片
 var curr_card:Card = null
@@ -32,7 +30,8 @@ func init_hm_character(game_para:ResourceLevelData):
 	self.is_mode_column = game_para.is_mode_column
 
 func character_process() -> void:
-	characte_static.global_position = get_viewport().get_mouse_position()
+	## CanvasItem方法获取位置
+	characte_static.global_position = temporary_character.get_global_mouse_position()
 
 ## 点击卡片
 func click_card(card:Card) -> void:
@@ -52,8 +51,8 @@ func click_card(card:Card) -> void:
 		characte_static_shadow.modulate.a = 0
 		characte_static.z_index = 1
 
-		temporary_plants.add_child(characte_static)
-		temporary_plants.add_child(characte_static_shadow)
+		temporary_character.add_child(characte_static)
+		temporary_character.add_child(characte_static_shadow)
 
 		if click_card_column:
 			click_card_column()
@@ -72,8 +71,8 @@ func click_card(card:Card) -> void:
 		characte_static_shadow.modulate.a = 0
 		characte_static.z_index = 1
 
-		temporary_zombies.add_child(characte_static)
-		temporary_zombies.add_child(characte_static_shadow)
+		temporary_character.add_child(characte_static)
+		temporary_character.add_child(characte_static_shadow)
 
 		if click_card_column:
 			click_card_column()
@@ -206,13 +205,13 @@ func click_card_column() -> void:
 		for plant_cell_i in range(Global.main_game.plant_cell_manager.row_col.x):
 			var column_characte_static_shadow = characte_static_shadow.duplicate()
 			column_characte_static_shadow.modulate.a = 0
-			temporary_plants.add_child(column_characte_static_shadow)
+			temporary_character.add_child(column_characte_static_shadow)
 			characte_static_shadow_colum.append(column_characte_static_shadow)
 	else:
 		for zombie_rows_i in range(Global.main_game.zombie_manager.all_zombie_rows.size()):
 			var column_characte_static_shadow = characte_static_shadow.duplicate()
 			column_characte_static_shadow.modulate.a = 0
-			temporary_zombies.add_child(column_characte_static_shadow)
+			temporary_character.add_child(column_characte_static_shadow)
 			characte_static_shadow_colum.append(column_characte_static_shadow)
 
 ## 柱子模式 鼠标进入判断其他格子是否可以种植，产生虚影

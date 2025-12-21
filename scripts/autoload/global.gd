@@ -224,6 +224,9 @@ func create_coin(probability:Array=[0.5, 0.5, 0], global_position_new_coin:Vecto
 		else:
 			new_coin = SceneRegistry.COIN_DIAMOND.instantiate()
 		coin_value_label.add_child(new_coin)
+		## 主游戏场景中,摄像位置修正
+		if is_instance_valid(main_game):
+			global_position_new_coin -= main_game.camera_2d.global_position
 		new_coin.global_position = global_position_new_coin
 		## 抛物线发射金币
 		new_coin.launch(target_position)
@@ -241,6 +244,9 @@ func create_garden_plant(global_position_new_garden_plant:Vector2):
 	var new_garden_plant:Present = SceneRegistry.PRESENT.instantiate()
 
 	coin_value_label.add_child(new_garden_plant)
+	## 主游戏场景中,摄像位置修正
+	if is_instance_valid(main_game):
+		global_position_new_garden_plant -= main_game.camera_2d.global_position
 	new_garden_plant.global_position = global_position_new_garden_plant
 	SoundManager.play_other_SFX("chime")
 

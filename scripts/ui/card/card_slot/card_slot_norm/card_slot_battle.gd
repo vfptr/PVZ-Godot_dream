@@ -5,6 +5,7 @@ class_name CardSlotBattle
 @onready var curr_sun_value: Label = $SunLabelControl/CurrSunValue
 @onready var card_placeholder_ori: TextureRect = $CardUiList/CardPlaceholder_ori
 @onready var card_ui_list: HBoxContainer = $CardUiList
+@onready var marker_2d_sun_target: Marker2D = %Marker2DSunTarget
 
 ## 出战卡槽占位节点
 var cards_placeholder:Array = []
@@ -25,6 +26,7 @@ func _ready() -> void:
 	EventBus.subscribe("add_sun_value", func(value): sun_value+=value)
 	EventBus.subscribe("update_card_purple_sun_cost", update_card_purple_sun_cost)
 
+
 ## 初始化出战卡槽，管理器调用
 func init_card_slot_battle(max_choosed_card_num:int, sun:int):
 	self.sun_value = sun
@@ -34,6 +36,9 @@ func init_card_slot_battle(max_choosed_card_num:int, sun:int):
 
 	card_placeholder_ori.free()		## 立即删除掉该节点，下面获取卡槽占位节点
 	cards_placeholder = card_ui_list.get_children()
+	## 更新阳光收集位置
+	EventBus.push_event("update_marker_2d_sun_target", marker_2d_sun_target)
+
 	return cards_placeholder
 
 ## 主游戏刷新卡片

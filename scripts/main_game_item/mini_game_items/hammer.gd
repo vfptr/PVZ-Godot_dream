@@ -76,11 +76,15 @@ func spawn_sun(create_global_position:Vector2):
 
 ## 对僵尸造成锤子伤害
 func hammer_zombie():
+	##INFO:安卓适配 等待两物理帧后锤击，可以获取当前位置僵尸碰撞体，
+	if OS.get_name() == "Android":
+		position = get_global_mouse_position()
+		await get_tree().physics_frame
+		await get_tree().physics_frame
 	var overlapping_areas = area_2d.get_overlapping_areas()
 	## 如果为空，直接退出该函数
 	if overlapping_areas.is_empty():
 		return
-
 	## 选择最左边的僵尸area
 	var area_be_choosed :Area2D = null
 	# 遍历所有重叠的区域

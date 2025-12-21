@@ -9,12 +9,19 @@ func _input(event):
 	if not is_clone and is_activate:
 		## 鼠标左键按下
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			## 安卓端等待两帧移动到对应的位置
+			is_mouse_button_pressed_wait = true
+			global_position = get_global_mouse_position()
+			body.visible = false
+			await get_tree().physics_frame
+			await get_tree().physics_frame
 			## 如果当前有植物格子
 			if judge_is_curr_plant_cell():
 				use_it()
 			## 如果当前没有植物格子
 			else:
 				deactivate_it()
+			is_mouse_button_pressed_wait = false
 		## 鼠标右键
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 			deactivate_it()

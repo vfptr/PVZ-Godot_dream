@@ -51,7 +51,7 @@ nodes/TimeScale/position = Vector2(140, 160)
 node_connections = [&"output", 0, &"TimeScale", &"OneShot", 0, &"Animation", &"OneShot", 1, &"TimeScale 2", &"TimeScale", 0, &"OneShot", &"TimeScale 2", 0, &"Animation 2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvf6f"]
-size = Vector2(800, 5)
+size = Vector2(1000, 5)
 
 [node name="Plant045WinterMelon" node_paths=PackedStringArray("node2d_detect_in_slope") instance=ExtResource("1_w8in0")]
 plant_type = 45
@@ -72,53 +72,53 @@ visible = false
 centered = false
 
 [node name="Frontleaf_right_tip" type="Sprite2D" parent="Body/BodyCorrect" index="3"]
-position = Vector2(26.8, 57.4)
-rotation = -2.46091
-scale = Vector2(0.571, 0.443)
-skew = 3.14334
+position = Vector2(27.495874, 59.091747)
+rotation = -2.5268798
+scale = Vector2(0.5729794, 0.443)
+skew = 3.2093
 texture = ExtResource("2_1x6ev")
 centered = false
 
 [node name="Frontleaf_tip_left" type="Sprite2D" parent="Body/BodyCorrect" index="4"]
-position = Vector2(64.7, 48.7)
-rotation = 2.51153
-scale = Vector2(0.571, 0.498)
-skew = -3.13985
+position = Vector2(64.226814, 50.304127)
+rotation = 2.5220962
+scale = Vector2(0.5710206, 0.49995875)
+skew = -3.1697478
 texture = ExtResource("3_41kgx")
 centered = false
 
 [node name="Cabbagepult_basket" type="Sprite2D" parent="Body/BodyCorrect" index="5"]
-position = Vector2(-24.654642, -0.7814319)
-rotation = 0.093923286
+position = Vector2(-29.98556, 19.71955)
+rotation = -0.27257687
 scale = Vector2(0.799, 0.799)
 texture = ExtResource("4_4tk23")
 centered = false
 
 [node name="Melonpult_mellon" type="Sprite2D" parent="Body/BodyCorrect" index="6"]
-position = Vector2(-19.443464, -36.901894)
-rotation = 0.40091377
-scale = Vector2(0.998, 0.998)
+position = Vector2(-42.131927, -7.50933)
+rotation = -0.13426384
+scale = Vector2(0.997, 0.997)
 texture = ExtResource("5_uc7vn")
 centered = false
 
 [node name="Cabbagepult_basket_overlay" type="Sprite2D" parent="Body/BodyCorrect" index="7"]
-position = Vector2(-25.523418, 8.526375)
-rotation = 0.093923286
+position = Vector2(-27.397936, 28.723675)
+rotation = -0.27257687
 scale = Vector2(0.799, 0.799)
 texture = ExtResource("6_nrqmn")
 centered = false
 
 [node name="Melonpult_stalk" type="Sprite2D" parent="Body/BodyCorrect" index="8"]
-position = Vector2(16.015612, 17.646837)
-rotation = 0.01328177
-scale = Vector2(0.8009219, 0.8)
-skew = 0.025089702
+position = Vector2(15.406188, 22.283497)
+rotation = -0.10414393
+scale = Vector2(0.801, 0.79902065)
+skew = 0.045162767
 texture = ExtResource("7_jvi63")
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="Body/BodyCorrect" index="9"]
-position = Vector2(15.592195, 32.531223)
-scale = Vector2(0.7913123, 0.8201413)
+position = Vector2(14.306189, 35.78556)
+scale = Vector2(0.8308349, 0.7442888)
 texture = ExtResource("8_6ty4r")
 centered = false
 
@@ -130,38 +130,37 @@ texture = ExtResource("9_26gh6")
 centered = false
 
 [node name="Melonpult_eyebrow1" type="Sprite2D" parent="Body/BodyCorrect" index="11"]
-position = Vector2(53.4, 45.1)
+position = Vector2(53.4, 47.389687)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_s04lx")
 centered = false
 
 [node name="Melonpult_eyebrow2" type="Sprite2D" parent="Body/BodyCorrect" index="12"]
-position = Vector2(35.5, 46.623417)
+position = Vector2(35.5, 48.59381)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_s04lx")
 centered = false
 
 [node name="Frontleaf" type="Sprite2D" parent="Body/BodyCorrect" index="13"]
-position = Vector2(23.392193, 55.268776)
+position = Vector2(23.5, 55.595875)
 rotation = 0.101229
-scale = Vector2(0.572, 0.42862448)
+scale = Vector2(0.572, 0.41712376)
 skew = 0.0034908
 texture = ExtResource("11_t884t")
 centered = false
 
 [node name="Frontleaf_right_tip1" type="Sprite2D" parent="Body/BodyCorrect" index="14"]
-position = Vector2(57.02342, 59.684387)
-rotation = 0.029313564
-scale = Vector2(0.572, 0.44015613)
-skew = -0.008454255
+position = Vector2(56.40619, 59.79587)
+rotation = -0.054950908
+scale = Vector2(0.58295876, 0.43604124)
 texture = ExtResource("2_1x6ev")
 centered = false
 
 [node name="Frontleaf_tip_left1" type="Sprite2D" parent="Body/BodyCorrect" index="15"]
-position = Vector2(20.268776, 59.584385)
-rotation = 0.13477354
-scale = Vector2(0.5806097, 0.47017092)
-skew = 0.058633927
+position = Vector2(20.891748, 59.397938)
+rotation = 0.22275394
+scale = Vector2(0.5869175, 0.43630943)
+skew = 0.026036087
 texture = ExtResource("3_41kgx")
 centered = false
 
@@ -201,7 +200,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/DetectComponent/Area2D" index="0"]
-position = Vector2(400, 0)
+position = Vector2(500, 0)
 shape = SubResource("RectangleShape2D_vvf6f")
 
 [connection signal="timeout" from="AttackComponent/BulletAttackCdTimer" to="AttackComponent" method="_on_bullet_attack_cd_timer_timeout"]

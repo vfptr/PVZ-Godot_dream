@@ -8,6 +8,7 @@
 
 **考虑到版权问题，将原版相关资源文件删除。**
 
+
 有对本项目感兴趣的大佬，欢迎大家进qq群 (1046565016) 交流
 
 ## 项目展示
@@ -77,8 +78,10 @@ forked from [PVZ_reanim2godot_animation](https://github.com/HYTommm/PVZ_reanim2g
 致敬《植物大战僵尸》原作团队（PopCap & EA）
 
 ### 项目贡献
-- 植物图鉴初稿整理：[多003_](https://space.bilibili.com/472181151?spm_id_from=333.1387.follow.user_card.click)
+- 植物图鉴初稿整理：[多003_](https://space.bilibili.com/472181151)
+- 宽屏（16:9）的部分素材使用[豆包ai](https://www.doubao.com/chat)生成,感谢ai
 
 ### 参考项目
-- 樱桃炸弹爆炸动画粒子特效: [HYTommm](https://space.bilibili.com/3493140163988287?spm_id_from=333.1387.follow.user_card.click)开源项目[Godot-PVZ](https://github.com/HYTommm/Godot-PVZ)
-- 信号总线,随机选择器: [玩物不丧志的老李](https://space.bilibili.com/8618918?spm_id_from=333.788.upinfo.head.click)开源项目[godot_core_system](https://github.com/LiGameAcademy/godot_core_system?tab=readme-ov-file)
+- 樱桃炸弹爆炸动画粒子特效: [HYTommm](https://space.bilibili.com/3493140163988287)开源项目[Godot-PVZ](https://github.com/HYTommm/Godot-PVZ)
+- 信号总线,随机选择器: [玩物不丧志的老李](https://space.bilibili.com/8618918)开源项目[godot_core_system](https://github.com/LiGameAcademy/godot_core_system)
+- 种子雨雨幕：[简单的小雨氛围：shader写的雾、粒子做的雨和水花 | godot4教程](https://www.bilibili.com/video/BV15ibAz4EZi)
