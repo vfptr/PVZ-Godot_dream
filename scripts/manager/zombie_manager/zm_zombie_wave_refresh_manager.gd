@@ -130,13 +130,13 @@ func judge_total_refresh(zombie_num:int):
 ## 触发提前刷新
 func _trigger_refresh():
 	if curr_refresh_status == E_RefreshStatus.AwaitRefresh:
-		_on_wave_norm_refresh_timer_timeout()
+		refresh_once()
 	else:
 		## 这地方可能会堆积，等待触发后,判断是否已经触发过了
 		await signal_start_await_refresh
 		## 如果还没触发刷新
 		if curr_refresh_status == E_RefreshStatus.AwaitRefresh:
-			_on_wave_norm_refresh_timer_timeout()
+			refresh_once()
 
 ## 波次最小时间到达后，可以提前刷新
 func _on_wave_min_time_timer_timeout() -> void:
@@ -145,6 +145,10 @@ func _on_wave_min_time_timer_timeout() -> void:
 
 ## 正常刷新触发，以及其余刷新触发逻辑
 func _on_wave_norm_refresh_timer_timeout() -> void:
+	if curr_refresh_status == E_RefreshStatus.AwaitRefresh:
+		refresh_once()
+
+func refresh_once():
 	curr_refresh_status = E_RefreshStatus.CompleteRefresh
 	curr_can_refresh_type = E_RefreshType.Null
 	## 可能报错（“Can't change this state while flushing queries”），空闲后触发
