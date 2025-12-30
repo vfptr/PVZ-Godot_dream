@@ -44,7 +44,7 @@ var curr_condition:int = 3
 	Global.PlacePlantInCell.Float: null,
 	Global.PlacePlantInCell.Down: null,
 	Global.PlacePlantInCell.Shell: null,
-	Global.PlacePlantInCell.Imitater: null,
+	#Global.PlacePlantInCell.Imitater: null,
 }
 
 ## 在当前格子中对应位置的容器节点
@@ -160,16 +160,15 @@ func imitater_create_plant(plant_type:Global.PlantType, is_plant_start_effect:=t
 func create_plant(plant_type:Global.PlantType, is_imitater:=false, is_plant_start_effect:=true, is_imitater_material:=false, is_zombie_mode:=false) -> Plant000Base:
 	var plant_condition:ResourcePlantCondition
 	var plant :Plant000Base
+	plant_condition = Global.get_plant_info(plant_type, Global.PlantInfoAttribute.PlantConditionResource)
 	## 创建植物
 	if is_imitater:
 		## 创建植物
-		plant_condition = Global.get_plant_info(Global.PlantType.P999Imitater, Global.PlantInfoAttribute.PlantConditionResource)
+		#plant_condition = Global.get_plant_info(Global.PlantType.P999Imitater, Global.PlantInfoAttribute.PlantConditionResource)
 		plant = Global.get_plant_info(Global.PlantType.P999Imitater, Global.PlantInfoAttribute.PlantScenes).instantiate()
 		plant = plant as Plant999Imitater
 		plant.imitater_plant_type = plant_type
-
 	else:
-		plant_condition = Global.get_plant_info(plant_type, Global.PlantInfoAttribute.PlantConditionResource)
 		## 如果该植物为紫卡
 		if plant_condition.is_purple_card:
 			## 删除紫卡前置植物,创建新植物
@@ -192,7 +191,11 @@ func create_plant(plant_type:Global.PlantType, is_imitater:=false, is_plant_star
 		Plant000Base.E_PInitAttr.IsZombieMode:is_zombie_mode
 	}
 	plant.init_plant(plant_init_para)
-	plant_container_node[plant_condition.place_plant_in_cell].add_child(plant)
+	if is_imitater:
+		plant_container_node[Global.PlacePlantInCell.Imitater].add_child(plant)
+	else:
+		plant_container_node[plant_condition.place_plant_in_cell].add_child(plant)
+
 	plant_in_cell[plant_condition.place_plant_in_cell] = plant
 	plant.signal_character_death.connect(one_plant_free.bind(plant))
 
@@ -206,17 +209,19 @@ func create_plant(plant_type:Global.PlantType, is_imitater:=false, is_plant_star
 			plant_start_effect_scene = SceneRegistry.PLANT_START_EFFECT.instantiate()
 		plant.body.add_child(plant_start_effect_scene)
 
-	## 如果是down位置植物，修改中间植物节点顺序， 提高中间植物和壳的位置,
-	if plant_condition.place_plant_in_cell == Global.PlacePlantInCell.Down:
-		#plant = plant as PlantDownBase
-		## 修改PlantNorm和PlantShell为底部植物节点上下移动节点的子节点
-		remove_child(plant_container_node[Global.PlacePlantInCell.Norm])
-		plant.down_plant_container.add_child(plant_container_node[Global.PlacePlantInCell.Norm])
-		plant_container_node[Global.PlacePlantInCell.Norm].global_position = plant_postion_node_ori_global_position[Global.PlacePlantInCell.Norm] - plant.plant_up_position
+	if not is_imitater:
 
-		remove_child(plant_container_node[Global.PlacePlantInCell.Shell])
-		plant.down_plant_container.add_child(plant_container_node[Global.PlacePlantInCell.Shell])
-		plant_container_node[Global.PlacePlantInCell.Shell].global_position = plant_postion_node_ori_global_position[Global.PlacePlantInCell.Shell] - plant.plant_up_position
+		## 如果是down位置植物，修改中间植物节点顺序， 提高中间植物和壳的位置,
+		if plant_condition.place_plant_in_cell == Global.PlacePlantInCell.Down:
+			#plant = plant as PlantDownBase
+			## 修改PlantNorm和PlantShell为底部植物节点上下移动节点的子节点
+			remove_child(plant_container_node[Global.PlacePlantInCell.Norm])
+			plant.down_plant_container.add_child(plant_container_node[Global.PlacePlantInCell.Norm])
+			plant_container_node[Global.PlacePlantInCell.Norm].global_position = plant_postion_node_ori_global_position[Global.PlacePlantInCell.Norm] - plant.plant_up_position
+
+			remove_child(plant_container_node[Global.PlacePlantInCell.Shell])
+			plant.down_plant_container.add_child(plant_container_node[Global.PlacePlantInCell.Shell])
+			plant_container_node[Global.PlacePlantInCell.Shell].global_position = plant_postion_node_ori_global_position[Global.PlacePlantInCell.Shell] - plant.plant_up_position
 
 	signal_plant_create.emit(self, plant.plant_type)
 
