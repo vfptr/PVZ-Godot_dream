@@ -27,19 +27,18 @@ func _on_area_entered(area: Area2D) -> void:
 	var owner_node = area.owner
 	if owner_node is Zombie000Base:
 		if lane == owner_node.lane:
-			if not is_moving:
-				is_moving = true
-				SoundManager.play_other_SFX("pool_cleaner")
-				animation_player.play("PoolCleaner_land")
-
-			owner_node.character_death_disappear()
-			move_speed = ori_move_speed / 4
-			is_zombie = true
+			_on_lane_zombie_enter(owner_node)
 
 	elif owner_node.name =="Pool":
 		print("小推车碰撞到泳池")
 		start_swim()
 
+## 启动小推车
+func _start_mower():
+	is_moving = true
+	SoundManager.play_other_SFX("pool_cleaner")
+	animation_player.play("PoolCleaner_land")
+	_mower_run_all_zombie_on_start()
 
 func _on_area_exited(area: Area2D) -> void:
 	var owner_node = area.owner
@@ -55,6 +54,12 @@ func _on_area_exited(area: Area2D) -> void:
 func suck_end():
 	move_speed = ori_move_speed
 	is_zombie = false
+
+## 小推车碾压一个僵尸
+func _mower_run_one_zombie(zombie :Zombie000Base):
+	zombie.character_death_disappear()
+	move_speed = ori_move_speed / 4
+	is_zombie = true
 
 #region 水池游泳
 

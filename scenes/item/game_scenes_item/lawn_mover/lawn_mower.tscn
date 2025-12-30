@@ -23,7 +23,6 @@ size = Vector2(33.5, 48)
 
 [node name="LawnMower" type="Node2D"]
 script = ExtResource("1_nbmi7")
-move_speed = 300.0
 
 [node name="Body" type="Node2D" parent="."]
 position = Vector2(-39, -55)

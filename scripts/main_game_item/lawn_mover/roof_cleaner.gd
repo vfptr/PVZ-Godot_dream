@@ -34,15 +34,9 @@ func update_move_dir_y_correct(curr_move_dir_y_correct_slope:Vector2):
 	self.move_dir_y_correct_slope = curr_move_dir_y_correct_slope
 
 
-
-func _on_area_entered(area: Area2D) -> void:
-	var area_owner = area.owner
-	if area_owner is Zombie000Base:
-		var zombie :Zombie000Base = area_owner
-		if lane == zombie.lane:
-			if not is_moving:
-				is_moving = true
-				animation_player.play("RoofCleaner")
-				SoundManager.play_other_SFX("lawnmower")
-
-			zombie.be_mowered_run(self)
+## 启动小推车
+func _start_mower():
+	is_moving = true
+	animation_player.play("RoofCleaner")
+	SoundManager.play_other_SFX("lawnmower")
+	_mower_run_all_zombie_on_start()

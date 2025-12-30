@@ -15,6 +15,12 @@ class_name Zombie018Digger
 @export var is_up_end := false
 @onready var gpu_particles_dirt: GPUParticles2D = $GPUParticlesDirt
 
+
+## 是否可以触发小推车 只有掘土状态下失去铁器道具的矿工可以触发
+var is_can_trigger_mower:=false
+## 掘土状态失去铁器信号，小推车检测到掘地矿工时订阅
+signal signal_can_trigger_mower
+
 func ready_norm():
 	super()
 	gpu_particles_dirt.emitting = true
@@ -46,6 +52,9 @@ func dig_end():
 func loss_iron_item():
 	super()
 	if is_dig:
+		#print("掘土时失去铁器")
+		is_can_trigger_mower = true
+		signal_can_trigger_mower.emit()
 		move_component.update_move_mode(MoveComponent.E_MoveMode.Ground)
 		## 非正常推出掘土状态
 		is_norm_end = false
